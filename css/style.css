@@ -1,0 +1,497 @@
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	height: 100%;
+}
+
+* {
+	-webkit-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+*::-moz-selection {
+	background-color: rgb(68, 73, 65, 0.5);
+	color: white;
+}
+
+html *::-moz-selection {
+	background-color: rgb(68, 73, 65, 0.5);
+	color: white;
+}
+
+*::selection {
+	background-color: rgb(68, 73, 65, 0.5);
+	color: white;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100% !important;
+	min-height: 600px !important;
+	word-wrap: break-word;
+	background-color: #1f201e;
+	font-size: 16px;
+	color: #e7e7e7;
+	font-family: 'Playfair Display', serif;
+}
+
+.container {
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.game {
+	margin: 20px;
+	height: 540px;
+	-webkit-box-ordinal-group: 0;
+	-ms-flex-order: -1;
+	order: -1;
+}
+
+
+/***********FIELD*********/
+
+.field {
+	width: 320px;
+	height: 400px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	border: 1px solid rgba(242, 214, 198, 0.7);
+	font-size: 16px;
+	background-color: #000000;
+	position: relative;
+	overflow: hidden;
+}
+
+.row {
+	margin: 0;
+	padding: 0;
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	position: relative;
+}
+
+
+/*левая вертикальная полоса*/
+
+.field::before {
+	content: '';
+	height: 99.5%;
+	width: 1px;
+	border: 1px solid #9b945b;
+	background-color: #9b945b;
+	position: absolute;
+	top: 0;
+	left: 78px;
+}
+
+
+/*правая вертикальная полоса*/
+
+.field::after {
+	content: '';
+	height: 99.5%;
+	width: 1px;
+	border: 1px solid #9b945b;
+	background-color: #9b945b;
+	position: absolute;
+	top: 0;
+	right: 77px;
+}
+
+
+/*верхняя горизонтальная полоса*/
+
+.field .row:first-child:after {
+	content: '';
+	height: 1px;
+	width: 99.5%;
+	border: 1px solid #9b945b;
+	background-color: #9b945b;
+	position: absolute;
+	top: 79px;
+	left: 0;
+}
+
+
+/*нижняя горизонтальная полоса*/
+
+.field .row:last-child:after {
+	content: '';
+	height: 1px;
+	width: 99.5%;
+	border: 1px solid #9b945b;
+	background-color: #9b945b;
+	position: absolute;
+	bottom: 78px;
+	left: 0;
+}
+
+.cell {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	margin: 2px;
+	padding: 0;
+	border-radius: 0;
+	cursor: pointer;
+	line-height: 1;
+	font-size: 30px;
+	font-weight: 600;
+	position: relative;
+	background-color: transparent;
+	border: 1px outset #8d8668;
+	color: #e7e7e7;
+	overflow: hidden;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.disabled {
+	/* background-color: #3b3b3a !important; */
+	background-color: #2c2c2b !important;
+}
+
+
+/***********help*********/
+
+.help {
+	margin: 20px 0px;
+	text-align: center;
+	min-height: 22px;
+	color: #9b945b;
+}
+
+
+/***********inputForm*********/
+
+.inputForm {
+	width: 320px;
+	margin: 0;
+	padding: 1px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	background-color: #000000;
+	border: 1px solid rgba(242, 214, 198, 0.7);
+}
+
+
+#btnPlay {
+	flex:1;
+	/* width: 120px; */
+	padding: 20px;
+	border: 2px outset #1f201e6b;
+	background-color: #9b945b;
+	font-family: 'Playfair Display', serif;
+	font-size: 18px;
+	color: #000000;
+	cursor: pointer;
+}
+
+#inputField {
+	width:calc(320px / 3);
+	flex:1;
+	/* width: 120px; */
+	padding: 5px;
+	border-radius: 0;
+	border: 2px outset #9b945b;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 600;
+	color: #e7e7e7;
+	background-color: transparent;
+}
+
+#inputField::-webkit-input-placeholder {
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	color: #e7e7e7d3;
+}
+
+#inputField::-moz-placeholder {
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	color: #e7e7e7d3;
+}
+
+#inputField:-ms-input-placeholder {
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	color: #e7e7e7d3;
+}
+
+#inputField::-ms-input-placeholder {
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	color: #e7e7e7d3;
+}
+
+#inputField::placeholder {
+	font-family: 'Playfair Display', serif;
+	font-size: 12px;
+	color: #e7e7e7d3;
+}
+
+#inputField:focus,
+#inputField:active {
+	outline: 1px inset #f2d6c6;
+}
+
+#addNumber {
+	flex:1;
+	padding: 20px;
+	height: 80px;
+	/* width: 80px; */
+	cursor: pointer;
+	border-radius: 0;
+	border: 2px outset #9b945b;
+	font-family: 'Playfair Display', serif;
+	font-size: 16px;
+	color: #e7e7e7;
+	background-color: transparent;
+}
+
+#addNumber:focus,
+#addNumber:active,
+button:focus,
+button:active {
+	outline: 1px inset #f2d6c6;
+}
+
+
+/***********rules*********/
+
+.rules {
+	margin: 20px;
+	height: 540px;
+	width: 400px;
+}
+summary {
+	margin: 20px 10px;
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-underline-offset: 5px;
+	font-size: 30px;
+	line-height: 1.1;
+	text-align: center;
+	color: #9b945b;
+}
+ul {
+	list-style-type: square;
+}
+
+li {
+	margin: 5px 0;
+	font-size: 18px;
+	font-weight: 400;
+	color: #e7e7e7;
+}
+
+li::marker {
+	color: #9b945b;
+	font-size: 25px;
+}
+
+.iconWin {
+	width: 95%;
+	height: 95%;
+	position: absolute;
+	top: 49%;
+	left: 53%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+	opacity: 0.7;
+}
+
+.iconWrong {
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+	opacity: 1;
+}
+
+
+
+
+
+/***********MODAL https://sweetalert2.github.io/#examples************/
+.swal2-shown {
+	/*padding и overflow-y - чтобы не скрывался scroll
+	и окно не растягивалось в момент появления модального окна*/
+	padding: 0 !important;
+	overflow: auto;
+}
+.swal2-container {
+	background-color: #232526 !important;
+}
+.swal2-popup {
+	background-color: #414345 !important;
+}
+.swal2-title,
+.swal2-html-container {
+	color: #a8956c !important;
+}
+.swal2-confirm {
+	min-width: 220px;
+	box-shadow: none !important;
+	border: 1px solid #a8956c !important;
+	font-size: 18px;
+	color: #a8956c !important;
+	background-color: transparent !important;
+}
+
+
+
+@media all and (max-width:700px) {
+	html {
+		height: initial;
+	}
+	* {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		height: initial;
+		min-height: initial;
+		word-wrap: break-word;
+		background-color: #1f201e;
+		font-size: 16px;
+		color: #e7e7e7;
+	}
+	.container {
+		margin: 20px 0;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+        justify-content: flex-start;
+	}
+	.game {
+		margin: 10px;
+		height: unset;
+		-webkit-box-ordinal-group: initial;
+		-ms-flex-order: initial;
+		order: initial;
+	}
+	.help {
+		font-size: 14px;
+	}
+	.rules {
+		margin: 10px;
+		height: unset;
+		/* width: unset; */
+		max-width: 100%;
+	}
+	summary {
+		margin: 0px;
+	}
+	ul {
+		margin: 5px 0 15px;
+	}
+}
+
+@media all and (max-width:350px) {
+	.container {
+		margin: 15 0 20px;
+	}
+	.field {
+		width: 240px;
+		height: 300px;
+	}
+	/*левая вертикальная полоса*/
+	.field::before {
+		left: 58.5px;
+	}
+	/*правая вертикальная полоса*/
+	.field::after {
+		right: 57.5px;
+	}
+	/*верхняя горизонтальная полоса*/
+	.field .row:first-child:after {
+		top: 59px;
+	}
+	/*нижняя горизонтальная полоса*/
+	.field .row:last-child:after {
+		bottom: 58px;
+	}
+	.inputForm {
+		width: 240px;
+	}
+	#btnPlay {
+		/* width: 120px; */
+		padding: 10px;
+		font-size: 16px;
+	}
+	#inputField {
+		/* width: 90px; */
+		font-size: 16px;
+	}
+	#inputField::-webkit-input-placeholder {
+		font-size: 10px;
+	}
+	
+	#inputField::-moz-placeholder {
+		font-size: 10px;
+	}
+	
+	#inputField:-ms-input-placeholder {
+		font-size: 10px;
+	}
+	
+	#inputField::-ms-input-placeholder {
+		font-size: 10px;
+	}
+	
+	#inputField::placeholder {
+		font-size: 10px;
+	}
+	#addNumber {
+		padding: 5px;
+		height: 60px;
+		/* width: 60px; */
+	}
+	.help {
+		margin: 10px 0px;
+	}
+	summary {
+		font-size: 20px;
+	}
+	li {
+		margin: 3px 0;
+		font-size: 16px;
+	}
+	li::marker {
+		font-size: 20px;
+	}
+}

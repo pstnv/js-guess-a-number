@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>УГАДАЙ ЧИСЛО</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://cdn.glitch.global/4dee0b90-b324-484c-93d5-f2efa2a92450/icon.ico?v=1646894342163">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body style ="height: 100% !important;">
+        <div class="container">
+            <div class="rules">
+                <details>
+                    <summary> Правила игры </summary>
+                    <ul>
+                        <li>Число находится в диапазоне от 1 до 20</li>
+                        <li>Количество попыток неограниченно</li>
+                        <li>Для начала игры нажми кнопку «Старт»</li>
+                        <li>Введи число в поле и нажми кнопку «OK»</li>
+                        <li>Или просто нажми на ячейку с числом</li>
+                    </ul>
+                </details>
+            </div>
+            <div class="game">
+                <div class="field">
+                    <div class="row">
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                    </div>
+                    <div class="row">
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                    </div>
+                    <div class="row">
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                    </div>
+                    <div class="row">
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                    </div>
+                    <div class="row">
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"></button>
+                        <button class="cell"> </button>
+                    </div>
+                </div>
+                <p class="help"></p>
+                <div class="inputForm">
+                    <button id="btnPlay">Старт</button>
+                    <input id="inputField" type="text" placeholder="Введи число...">
+                    <button id="addNumber">OK</button>
+                </div>
+            </div>
+        </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
