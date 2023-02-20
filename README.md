@@ -2,7 +2,7 @@
 <a href="https://pstnv-guess-anumber.glitch.me/"> https://pstnv-guess-anumber.glitch.me </a>
 
 <div align="center">
-  <img src="https://cdn.glitch.global/ece60b40-3830-4d48-bb12-fa238aabf422/picPreview_11.png">
+  <img src="src/preview.png">
 </div>
 <br>
 
